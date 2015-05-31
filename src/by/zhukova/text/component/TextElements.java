@@ -1,35 +1,34 @@
 package by.zhukova.text.component;
 
 public enum TextElements {
-	TEXT, PARAGRAPH("\\p{Blank}{6}.+[.?!]"), SENTENCE("[A-Z¿-ﬂ].*?[.?!]"), LEXEME("\\p{Blank}?[¿-ﬂ‡-ˇA-Z-a-z\\d\\p{Punct}]+\\p{Blank}?"), WORD("[¿-ﬂ‡-ˇA-Za-z\\d]+");
-	//PUNCTUATION("\\p{Punct}");
-	
-	private  String regex;
+	TEXT, PARAGRAPH("\\p{Blank}{6}.+[.?!]"), SENTENCE("[A-Z–ê-–Ø].*?[.?!]"), LEXEME(
+			"\\p{Blank}?[–ê-–Ø–∞-—èA-Z-a-z\\d\\p{Punct}]+\\p{Blank}?"), WORD(
+			"[–ê-–Ø–∞-—èA-Za-z\\d]+");
+
+	private String regex;
+
 	TextElements() {
-		
+
 	}
-	
-	TextElements (String regex) {
+
+	TextElements(String regex) {
 		this.regex = regex;
 	}
-	
+
 	public String getRegex() {
 		return regex;
 	}
-	
+
 	public TextElements getNext() {
-		return values()[(ordinal()+1) % values().length];
+		return values()[(ordinal() + 1) % values().length];
 	}
-	
+
 	public boolean hasNext() {
-		if ((ordinal()+1) % values().length!=0) {
+		if ((ordinal() + 1) % values().length != 0) {
 			return true;
-		}
-		else {
-		return false;
+		} else {
+			return false;
 		}
 	}
 
 }
-
-
