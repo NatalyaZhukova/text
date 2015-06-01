@@ -11,37 +11,36 @@ import by.zhukova.text.exception.TechnicalException;
 
 public class TextParser {
 
-	public Component parse(Component node) throws TechnicalException {
+	public Component parse(String textLine) throws TechnicalException {
 		
-		if (node!=null) {
+		if (textLine!=null) {
+		Component text = new Composite(TextElements.TEXT);
 		
-		Composite textPart = (Composite)node;
-		String text = textPart.getTextLine();
-		TextElements element = textPart.getTextType().getNext();
-		String regex = element.getRegex();
-		Pattern pattern = Pattern.compile(regex);
+		Pattern pattern = Pattern.compile(regexParagraph);
 		
 		Matcher m = pattern.matcher(text);
 		
-		while (m.find()) {
-			Component subElement;
-			if (element.equals(TextElements.WORD)) {
-				 subElement = new Word(element, m.group());
-			}
-			else {
-			 subElement = new Composite(element, m.group());
-			}
-			textPart.add(subElement);
-			if (element.hasNext()) {
-			parse(subElement); 
-			}
-		}
+		
 		
 		return textPart; 
 		}
 		else {
 			throw new TechnicalException("No text for parsing");
 		}
+		
+			
+		}
+	
+	
+	
+	private Composite parseSentences(String text) {
+		return null;
+		
+	}
+	
+	private Composite parseLexemes(String text) {
+		return null;
+		
 	}
 	
 	

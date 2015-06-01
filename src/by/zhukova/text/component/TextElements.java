@@ -1,7 +1,7 @@
 package by.zhukova.text.component;
 
 public enum TextElements {
-	TEXT, PARAGRAPH("\\p{Blank}{6}.+[.?!]"), SENTENCE("[A-ZА-Я].*?[.?!]"), LEXEME(
+	TEXT, PARAGRAPH("\\p{Blank}{6}.+[.?!]"), LISTING("#{3}.*?#{3}"), SENTENCE("[A-ZА-Я].*?[.?!]"), LEXEME(
 			"\\p{Blank}?[А-Яа-яA-Z-a-z\\d\\p{Punct}]+\\p{Blank}?"), WORD(
 			"[А-Яа-яA-Za-z\\d]+");
 

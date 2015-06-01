@@ -14,3 +14,5 @@
 2015-05-151 20:50:26 INFO  Runner:24 - text
 2015-05-151 20:50:26 ERROR Runner:32 - by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
 2015-05-151 20:51:13 INFO  Runner:24 - text
+2015-06-152 18:43:05 INFO  Runner:25 - text
+2015-06-152 19:16:30 ERROR Runner:37 - by.zhukova.text.exception.TechnicalException: Not supported operation

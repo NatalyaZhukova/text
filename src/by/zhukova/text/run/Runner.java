@@ -3,6 +3,7 @@ package by.zhukova.text.run;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import by.zhukova.text.action.TextActions;
 import by.zhukova.text.action.TextParser;
 import by.zhukova.text.action.TextReader;
 import by.zhukova.text.component.Component;
@@ -21,13 +22,15 @@ public class Runner {
 
 		Component text = null;
 		Component parsedText = null;
-		logger.info("text");
+		
 		try {
-			text = new Composite(TextElements.TEXT,
-					TextReader.readTextFromFile("text.txt"));
+			text = new Composite(TextElements.TEXT);
 			TextParser parser = new TextParser();
 			parsedText = parser.parse(text);
-			System.out.println(parsedText.toString());
+			//System.out.println(parsedText.toString());
+			System.out.println(TextActions.printSentencesByWordsNumber(parsedText));
+			
+			
 		} catch (TechnicalException e) {
 			logger.error(e);
 		}
