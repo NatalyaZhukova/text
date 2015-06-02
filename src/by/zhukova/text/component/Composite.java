@@ -2,19 +2,16 @@ package by.zhukova.text.component;
 
 import java.util.ArrayList;
 
-public class Composite implements Component {
+public class Composite extends Component {
 
-	private TextElements textType;
+	
 	private ArrayList<Component> list = new ArrayList<Component>();
 
-
 	public Composite(TextElements textType) {
-		this.textType = textType;
-		
+		super(textType);
+
 	}
-	public Composite() {
-		
-	}
+
 
 	public void add(Component component) {
 		list.add(component);
@@ -39,26 +36,52 @@ public class Composite implements Component {
 	}
 
 
-	
-
-	public TextElements getTextType() {
-		return textType;
-	}
-
-	public void setTextType(TextElements textType) {
-		this.textType = textType;
-	}
-
 	public String toString() {
 		StringBuilder st = new StringBuilder();
-		st.append("Type of object: ").append(textType).append('\n');
+		String splitter = " ";
+		if (getTextType().equals(TextElements.TEXT)) {
+			splitter = "\n";
+		} else if (getTextType().equals(TextElements.LEXEME)) {
+			splitter = "";
+		}
+
 		for (int i = 0; i < list.size(); i++) {
-			st.append(getChild(i).toString()).append('\n');
+			st.append(list.get(i).toString()).append(splitter);
 		}
 
 		return st.toString();
 	}
 
-		
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((list == null) ? 0 : list.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (!(obj instanceof Composite)) {
+			return false;
+		}
+		Composite other = (Composite) obj;
+		if (list == null) {
+			if (other.list != null) {
+				return false;
+			}
+		} else if (!list.equals(other.list)) {
+			return false;
+		}
+		return true;
+	}
 
 }

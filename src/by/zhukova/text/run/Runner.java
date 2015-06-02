@@ -24,11 +24,10 @@ public class Runner {
 		Component parsedText = null;
 		
 		try {
-			text = new Composite(TextElements.TEXT);
 			TextParser parser = new TextParser();
-			parsedText = parser.parse(text);
-			//System.out.println(parsedText.toString());
-			System.out.println(TextActions.printSentencesByWordsNumber(parsedText));
+			parsedText = parser.parse(TextReader.readTextFromFile("text.txt"));
+			System.out.println(TextActions.printSortedSentences(parsedText));
+			
 			
 			
 		} catch (TechnicalException e) {

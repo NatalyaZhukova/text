@@ -10,7 +10,8 @@ import by.zhukova.text.exception.TechnicalException;
 
 public class TextReader {
 
-	public static String readTextFromFile(String filename) throws TechnicalException {
+	public static String readTextFromFile(String filename)
+			throws TechnicalException {
 
 		File f = new File(filename);
 		BufferedReader br;

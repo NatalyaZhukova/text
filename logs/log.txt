@@ -1,18 +1,1 @@
-31.05.2015 20:32:53 [main] ERROR by.zhukova.text.run.Runner -by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-31.05.2015 20:35:51 [main] ERROR by.zhukova.text.run.Runner -by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-31.05.2015 20:36:21 [main] ERROR by.zhukova.text.run.Runner -by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-31.05.2015 20:38:29 [main] ERROR by.zhukova.text.run.Runner -by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-31.05.2015 20:40:11 [main] ERROR by.zhukova.text.run.Runner -by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-31.05.2015 20:40:28 [main] ERROR by.zhukova.text.run.Runner -by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-2015-05-31 20:41:51 ERROR Runner:31 - by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-2015-05-31 20:42:07 ERROR Runner:31 - by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-2015-05-151 20:42:48 ERROR Runner:31 - by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-2015-05-151 20:46:45 ERROR Runner:31 - by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-2015-05-151 20:48:06 ERROR Runner:31 - by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-2015-05-151 20:49:48 INFO  Runner:24 - text
-2015-05-151 20:49:48 ERROR Runner:32 - by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-2015-05-151 20:50:26 INFO  Runner:24 - text
-2015-05-151 20:50:26 ERROR Runner:32 - by.zhukova.text.exception.TechnicalException: text.txt (Не удается найти указанный файл)
-2015-05-151 20:51:13 INFO  Runner:24 - text
-2015-06-152 18:43:05 INFO  Runner:25 - text
-2015-06-152 19:16:30 ERROR Runner:37 - by.zhukova.text.exception.TechnicalException: Not supported operation
+
