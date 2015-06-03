@@ -69,5 +69,39 @@ public class TextActions {
 			throw new TechnicalException("Not supported operation");
 		}
 	}
+	
+	public Component firstLastWords(Component parsedText) {
+		if (parsedText.getTextType().equals(TextElements.TEXT)) {
+			ArrayList<Component> list = getSentencesList(parsedText);
+			for (int i=0; i<list.size; i++) {
+				Component sentence = list.get(i);
+				Component firstLexeme = sentence.getChild(0);
+				Component lastLexeme - sentence.getChild(sentence.getNumberOfParts()-1);
+				
+				for (int j=0; j<firstLexeme.getNumbersOfParts; j++) {
+					if (firstLexeme.getChild(j).getTextType().equals(TextElements.WORD)){
+						Leaf firstWord = firstLexeme.getChild(j);
+						int firstWordIndex = j;
+					}
+				}
+				for (int k=0; k<lastLexeme.getNumbersOfParts; k++) {
+					if (lastLexeme.getChild(k).getTextType().equals(TextElements.WORD)){
+						Leaf lastWord = firstLexeme.getChild(k);
+						int firstWordIndex = k;
+					}
+				}
+				String fWord = firstWord.getTextLine;
+				Character firstLetter = fWord.charAt(0).toLowerCase;
+				fWord = firstLetter + fWord.substring(1, fWord.length);
+				String lWord = lastWord.getTextLine;
+				firstLetter = lWord.charAt(0).toUpperCase;
+				lWord = firstLetter + lWord.substring(1, fWord.length);
+				firstWord.setTextLine = lWord;
+				lastWord.setTextLine = fWord;
+			}
+		}
+		else {
+			throw new TechnicalException("Not supported operation");	
+	}
 
 }
