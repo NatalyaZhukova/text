@@ -14,7 +14,7 @@ public class TextReader {
 			throws TechnicalException {
 
 		File f = new File(filename);
-		BufferedReader br;
+		BufferedReader br = null;
 		StringBuilder textLines = new StringBuilder();
 		try {
 			br = new BufferedReader(new InputStreamReader(
@@ -23,6 +23,7 @@ public class TextReader {
 			while ((c = br.read()) != -1) {
 				textLines.append((char) c);
 			}
+
 			br.close();
 
 		} catch (IOException e) {

@@ -7,8 +7,6 @@ import by.zhukova.text.action.TextActions;
 import by.zhukova.text.action.TextParser;
 import by.zhukova.text.action.TextReader;
 import by.zhukova.text.component.Component;
-import by.zhukova.text.component.Composite;
-import by.zhukova.text.component.TextElements;
 import by.zhukova.text.exception.TechnicalException;
 
 public class Runner {
@@ -20,13 +18,19 @@ public class Runner {
 
 	public static void main(String[] args) {
 
-		Component text = null;
+		
 		Component parsedText = null;
 		
 		try {
 			TextParser parser = new TextParser();
 			parsedText = parser.parse(TextReader.readTextFromFile("text.txt"));
+			System.out.println("Reconstructed text: ");
+			System.out.println(parsedText.toString());
+			System.out.println("1 task:");
 			System.out.println(TextActions.printSortedSentences(parsedText));
+			TextActions.firstLastWords(parsedText);
+			System.out.println("2 task: ");
+			System.out.println(TextActions.printSentences(parsedText));
 			
 			
 			

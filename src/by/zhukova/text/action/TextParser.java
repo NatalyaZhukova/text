@@ -15,7 +15,6 @@ public class TextParser {
 
 		if (textLine != null) {
 			Component text = new Composite(TextElements.TEXT);
-			// System.out.println(textLine);
 			Pattern p = Pattern.compile(TextElements.TEXT.getRegex(),
 					Pattern.DOTALL);
 			Pattern listing = Pattern.compile(TextElements.LISTING.getRegex(),
@@ -29,8 +28,7 @@ public class TextParser {
 					text.add(paragraph);
 
 				} else if (listing.matcher(match).matches()) {
-					Component newListing = new Leaf(TextElements.LISTING,
-							match);
+					Component newListing = new Leaf(TextElements.LISTING, match);
 					text.add(newListing);
 
 				}
@@ -44,7 +42,8 @@ public class TextParser {
 
 	}
 
-	private void parseParagraph(String text, Component paragraph) throws TechnicalException {
+	private void parseParagraph(String text, Component paragraph)
+			throws TechnicalException {
 		Pattern p = Pattern.compile(TextElements.SENTENCE.getRegex());
 		Matcher m = p.matcher(text);
 		while (m.find()) {
@@ -56,7 +55,8 @@ public class TextParser {
 
 	}
 
-	private void parseSentence(String text, Component sentence) throws TechnicalException {
+	private void parseSentence(String text, Component sentence)
+			throws TechnicalException {
 		Pattern p = Pattern.compile(TextElements.LEXEME.getRegex());
 		Matcher m = p.matcher(text);
 		while (m.find()) {
@@ -77,8 +77,8 @@ public class TextParser {
 				Component word = new Leaf(TextElements.WORD, match);
 				lexeme.add(word);
 			} else if (match.matches(TextElements.PUNCTUATION.getRegex())) {
-				Component punctuation = new Leaf(
-						TextElements.PUNCTUATION, match);
+				Component punctuation = new Leaf(TextElements.PUNCTUATION,
+						match);
 				lexeme.add(punctuation);
 			}
 		}
