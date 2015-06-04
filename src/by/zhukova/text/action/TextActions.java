@@ -12,7 +12,7 @@ public class TextActions {
 
 	public static ArrayList<Component> getSentencesList(Component parsedText)
 			throws TechnicalException {
-		if (parsedText.getTextType().equals(TextElements.TEXT)) {
+		if (TextElements.TEXT.equals(parsedText.getTextType())) {
 			ArrayList<Component> sentenceList = new ArrayList<Component>();
 
 			for (int i = 0; i < parsedText.getNumberOfParts(); i++) {
@@ -33,7 +33,7 @@ public class TextActions {
 
 	public static int countWordsInSentence(Component sentence)
 			throws TechnicalException {
-		if (sentence.getTextType().equals(TextElements.SENTENCE)) {
+		if (TextElements.SENTENCE.equals(sentence.getTextType())) {
 			int wordsNumber = 0;
 			for (int i = 0; i < sentence.getNumberOfParts(); i++) {
 				Component lexeme = sentence.getChild(i);
@@ -81,7 +81,7 @@ public class TextActions {
 
 	public static ArrayList<Component> firstLastWords(Component parsedText)
 			throws TechnicalException {
-		if (parsedText.getTextType().equals(TextElements.TEXT)) {
+		if (TextElements.TEXT.equals(parsedText.getTextType())) {
 			ArrayList<Component> list = getSentencesList(parsedText);
 			for (int i = 0; i < list.size(); i++) {
 				Component sentence = list.get(i);

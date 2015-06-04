@@ -13,7 +13,10 @@ public class TextParser {
 
 	public Component parse(String textLine) throws TechnicalException {
 
-		if (textLine != null) {
+		if (textLine == null) {
+			throw new TechnicalException("No text for parsing");
+
+		}
 			Component text = new Composite(TextElements.TEXT);
 			Pattern p = Pattern.compile(TextElements.TEXT.getRegex(),
 					Pattern.DOTALL);
@@ -36,12 +39,7 @@ public class TextParser {
 			}
 
 			return text;
-		} else {
-			throw new TechnicalException("No text for parsing");
-		}
-
-	}
-
+		} 
 	private void parseParagraph(String text, Component paragraph)
 			throws TechnicalException {
 		Pattern p = Pattern.compile(TextElements.SENTENCE.getRegex());
