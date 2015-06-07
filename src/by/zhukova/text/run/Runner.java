@@ -23,6 +23,7 @@ public class Runner {
 		
 		try {
 			TextParser parser = new TextParser();
+			//System.out.println(TextReader.readTextFromFile("text.txt"));
 			parsedText = parser.parse(TextReader.readTextFromFile("text.txt"));
 			System.out.println("Reconstructed text: ");
 			System.out.println(parsedText.toString());

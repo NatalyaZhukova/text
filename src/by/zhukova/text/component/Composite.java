@@ -44,7 +44,7 @@ public class Composite extends Component {
 		} else if (getTextType().equals(TextElements.LEXEME)) {
 			splitter = "";
 		}
-
+        
 		for (int i = 0; i < list.size(); i++) {
 			st.append(list.get(i).toString()).append(splitter);
 		}

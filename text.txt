@@ -1,29 +1,23 @@
-﻿      Во время своей работы приложение иногда сталкивается с разного рода нештатными ситуациями. При вызове метода некоторого объекта он может обнаружить у себя внутренние проблемы (неверные значения переменных), найти ошибки в других объектах или данных (например, в файле или сетевом адресе), определить факт нарушения своего базового контракта (чтение данных из закрытого потока) и так далее.   
-      Многие программисты не проверяют все возможные источники ошибок, и на то есть веская причина: если при каждом вызове метода анализировать все мыслимые ошибки, текст программы становится совершенно невразумительным. Таким образом достигается компромисс между правильностью (проверка всех ошибок) и ясностью (отказ от загромождения основной логики программы множеством проверок).      
+﻿      To define a property in a bean class, supply public getter and setter methods. For example, the following methods define an int property called mouthWidth:   
 ###
- try {
- }
- catch (Exception e) {
- }
- finally {
- }
-###
-      Исключения предоставляют удобную возможность проверки ошибок без загромождения текста программы. Кроме того, исключения непосредственно сигнализируют об ошибках, а не меняют значения флагов или каких-либо полей, которые потом нужно проверять. Исключения превращают ошибки, о которых может сигнализировать метод, в явную часть контракта этого метода. Список исключений виден программисту, проверяется компилятором и сохраняется в расширенных классах, переопределяющих данный метод.       
-      Исключение Exception возбуждается, когда возникает неожиданное ошибочное состояние. 
-###
-        File f = new File(filename);
-		BufferedReader br = null;
-		StringBuilder textLines = new StringBuilder();
-		try {
-			br = new BufferedReader(new InputStreamReader(
-					new FileInputStream(f), "UTF-8"));  // если файл отсутствует, генерируется исключение
-			int c;
-			while ((c = br.read()) != -1) {
-				textLines.append((char) c);
-			}
+public class FaceBean {
+    private int mMouthWidth = 90;
 
-		} catch (IOException e) {
-			throw new TechnicalException(e.getMessage());
-		}
+    public int getMouthWidth() {
+        return mMouthWidth;
+    }
+    
+    public void setMouthWidth(int mw) {
+        mMouthWidth = mw;
+    }
+}
+###   
+      A builder tool like NetBeans recognizes the method names and shows the mouthWidth property in its list of properties. It also recognizes the type, int, and provides an appropriate editor so the property can be manipulated at design time.   
+      This example shows a property than can be read and written. Other combinations are also possible. A read-only property, for example, has a getter method but no setter. A write-only property has a setter method only.   
+      A special case for boolean properties allows the accessor method to be defined using is instead of get. For example, the accessor for a boolean property running could be as follows:   
 ###
-       Затем исключение  перехватывается соответствующим условием в стеке вызова методов. Если исключение не перехвачено, срабатывает обработчик исключения по умолчанию, который обычно выводит полезную информацию об исключении (скажем, содержимое стека вызовов). Также содержимое стека вызовов можно получить, вызвав метод e.printStackTrace().   
+public boolean isRunning() {
+    // ...
+}
+###   
+      Various specializations of basic properties are available and described in the following sections.   
